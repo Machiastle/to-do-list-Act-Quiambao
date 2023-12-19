@@ -35,7 +35,7 @@ function App() {
 
   return (
     <div className="App">
-      <h1 className='Title'>GAWAIN MO</h1>
+      <h1 className='Title'>TO-DO LIST</h1>
       <div className="input_container">
         <input
           type="text"
