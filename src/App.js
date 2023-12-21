@@ -1,12 +1,14 @@
+// Imports necessary files such as css files and images
 import React, { useState } from 'react';
 import './App.css';
 import editImage from './Images/edit.png';
 import deleteImage from './Images/delete.png';
 function App() {
+  // Placeholder for user input
   const [tasks, Tasks] = useState([]);
   const [taskInput, TaskInput] = useState('');
   const [editingTaskId, TaskID] = useState(null);
-
+  // Responsible for adding the tasks inputted by users
   const AddTask = () => {
     if (taskInput.trim() !== '') {
       if (editingTaskId !== null) {
@@ -21,18 +23,18 @@ function App() {
       TaskInput('');
     }
   };
-
+  // Responsible for deleting tasks
   const DeleteTask = (taskId) => {
     const updatedTasks = tasks.filter((task) => task.id !== taskId);
     Tasks(updatedTasks);
   };
-
+  // Responsible for updating or editing tasks
   const EditTask = (taskId) => {
     const taskToEdit = tasks.find((task) => task.id === taskId);
     TaskInput(taskToEdit.text);
     TaskID(taskId);
   };
-
+  // Returns or responsible for the structure of the to do list program
   return (
     <div className="App">
       <h1 className='Title'>TO-DO LIST</h1>
